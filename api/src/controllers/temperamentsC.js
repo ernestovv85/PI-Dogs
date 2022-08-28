@@ -15,8 +15,8 @@ const dogTemperament = async(req, res, next) => {
     });
   console.log(apiRes)
     let comp = apiRes.flatMAp(el => {
-      if(el)
-      return el.split (', ')
+      if(el.values)
+      return el.values.split (', ')
     });
     
     let compSet = [...new Set(comp)]
