@@ -1,35 +1,24 @@
 const axios = require('axios');
 const {Temperament} = require ('../db');
 
-const dogTemperament = async(req, res, next) => {
-  try{
+const dogTemperament = async(req, res) => {
+  try {
     const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds')
     const response = apiUrl.data.map(el => {
-      return{
-        temperament: el.temperament
-      }
-    });
-  console.log(response)
-    let apiRes = response.data.map(el => {
       return el.temperament
-    });
-  console.log(apiRes)
-    let comp = apiRes.flatMAp(el => {
-      if(el.values)
-      return el.values.split (', ')
-    });
-    
-    let compSet = [...new Set(comp)]
-    compSet.forEach(el => {
-      Temperament.findOrCreate({
-        where: {name: el}
-      })
-    });
-    const allTemps = await Temperament.findAll()
-    return res.status(200).json(allTemps);
-  }catch(error){
-    next(error);
-  };
+    }).flatMap(dog => dog?.split(', '))
+    let setTemperaments = [...new Set(response)]
+    setTemperaments.forEach(temperament => {
+      if (temperament) {
+        Temperament.findOrCreate({
+          where: { name: temperament }
+        })
+      }
+    })
+    res.status(200).send(setTemperaments)
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 module.exports = {
