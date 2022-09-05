@@ -1,7 +1,7 @@
 const axios = require('axios');
 const {Temperament} = require ('../db');
 
-const dogTemperament = async(req, res) => {
+const dogTemperament = async(req, res, next) => {
   try {
     const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds')
     const response = apiUrl.data.map(el => {
@@ -17,7 +17,7 @@ const dogTemperament = async(req, res) => {
     })
     res.status(200).send(setTemperaments)
   } catch (error) {
-    console.log(error)
+    next(error)
   }
 };
 
