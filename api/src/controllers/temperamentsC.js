@@ -6,16 +6,30 @@ const dogTemperament = async(req, res, next) => {
     const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds')
     const response = apiUrl.data.map(el => {
       return el.temperament
-    }).flatMap(dog => dog?.split(', '))
-    let setTemperaments = [...new Set(response)]
-    setTemperaments.forEach(temperament => {
-      if (temperament) {
-        Temperament.findOrCreate({
-          where: { name: temperament }
-        })
-      }
-    })
-    res.status(200).send(setTemperaments)
+    }).join().split(',')
+    // let setTemperaments = [...new Set(response)]
+    // setTemperaments.forEach(temperament => {
+    //   if (temperament) {
+    //     Temperament.findOrCreate({
+    //       where: { name: temperament }
+    //     })
+    //   }
+    // })
+    let temps = [];
+
+    response.map((c) => {
+        if (!temps.includes(c.trim()) && c) {
+            temps.push(c.trim());
+        }
+    });
+    temps.map(async (d) => {
+        await Temperament.findOrCreate({
+            where: {
+                name: d
+            },
+        });
+    });
+    res.status(200).send(temps)
   } catch (error) {
     next(error)
   }

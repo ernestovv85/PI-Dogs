@@ -191,7 +191,7 @@ const getDogs = async (req, res, next) => {
       const dogName = await allDogs.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
       dogName.length ?
         res.status(200).json(dogName) :
-        res.status(404).send('Perro no encontrado');
+        res.status(404).send('Lomito no encontrado');
     } else {
       res.status(200).send(allDogs);
     }
@@ -208,7 +208,7 @@ const dogById = async (req, res, next) => {
       const dogId = await allDogs.filter(el => el.id == id)
       dogId.length ?
         res.status(200).json(dogId) :
-        res.status(404).send('Perro no encontrado')
+        res.status(404).send('Lomito no encontrado')
     }
   } catch (error) {
     next(error);
@@ -244,7 +244,7 @@ const createDog = async (req, res, next) => {
       where: { name: temperament }
     });
     process.addTemperament(temperamentDb);
-    res.send('Perro creado exitosamente');
+    res.send('Lomito registrado exitosamente');
   } catch (error) {
     next(error);
   }
