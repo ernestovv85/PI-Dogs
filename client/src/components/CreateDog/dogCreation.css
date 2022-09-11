@@ -1,0 +1,298 @@
+.fondo{
+    background-image: url('../img/create.jpg');
+    justify-content: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.homeButton{
+    background-color: rgba(255, 255, 255, 0.26);
+    position: relative;
+    color: white;
+    margin: 2ex;
+    margin-top: -3ex;
+    margin-left: 45%;
+    margin-right: 45%;
+    width: auto;
+    top: 0ex;
+    box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.homeButton:hover{
+    transform: scale(1.2);
+}
+
+.tituleCrear {
+    position: relative;
+    bottom: 0ex;
+    color: rgb(255, 255, 255);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5ex;
+    text-shadow: 0.1ex 0.1ex 0.2ex rgb(5, 39, 2);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1ex;
+    width: 13ex;
+}
+
+.buttonRefresh{
+    background-color: rgba(9, 121, 19, 0.26);
+    box-shadow: 0px 0px 10px 0px rgb(23, 46, 1);
+    border-radius: 4ex;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    position: relative;
+    width: 3ex;
+    height: 3ex;
+    top: 6ex;
+    right: 10ex;
+    width: 3ex;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.iconRefresh {
+    position: relative;
+    right: 0.1ex;
+    top: 0.1ex;
+    transition: all 0.4s ease-in-out;
+}
+
+.iconRefresh:hover {
+    transition-delay: 0s;
+    transform: rotate(360deg) scale(1);
+}
+
+.card-containers{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    overflow:auto;
+    border: 2px solid rgb(0, 0, 0);
+    backdrop-filter: blur(0.5ex);
+    margin: 1.5ex;
+    margin-top: 1ex;
+    width: 96%;
+    height: 75%;
+    box-shadow: 0ex 0ex 5ex 1ex rgb(0, 0, 0);
+    border-radius: 2ex;
+    font-size: 25px;
+}
+.card-containers::-webkit-scrollbar{
+    background-color: rgba(22, 196, 16, 0);
+}
+.card-containers::-webkit-scrollbar-thumb{
+    background-color: rgba(3, 53, 5, 0.425);
+    border-radius: 3ex;
+}
+
+.containers{
+    display: flex;
+    margin-top: 3ex;
+    margin-left: 10ex;
+    margin-right: 10ex;
+    flex-wrap:wrap;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+}
+
+.inputs{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.377);
+    border-radius: 5ex;
+    border: none;
+    margin: 2ex;
+    font-size: 18px;
+    height: 30px;
+    width: 200px;
+}
+
+.inputs:hover{
+    background-color: white;
+}
+
+.error{
+    color: rgb(255, 0, 0);
+    font-size: small;
+    text-shadow: none;
+}
+
+.breed {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+    color: white;
+}
+
+.minHeight {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.maxHeight {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.minWeight {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.maxWeight {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.minLifeSpan {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.maxLifeSpan {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.picture {
+    display: flex;
+    position: relative;
+    bottom: 0ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    margin: 1ex;
+}
+
+.listTemps{
+    background-color: rgba(0, 0, 0, 0.445);
+    color: white;
+    border-radius: 5ex;
+    width: 30ex;
+    height: 5ex;
+    text-align: center;
+    box-shadow:0 0 20px rgb(255, 255, 255),
+    0 0 40px rgb(0, 0, 0),
+    0 0 80px rgb(194, 0, 0),
+    0 0 160px rgba(255, 0, 0, 0.068);  ;
+    margin-top: 2ex;
+}
+
+.temperamentsItems{
+    display: flex;
+    flex-wrap:wrap;
+    margin: 0ex;
+    margin-right: 4ex;
+}
+
+.itemsTemperaments{
+    margin-left: 5ex;
+}
+
+.buttonRemove{
+    position:relative;
+    left: 0.5ex;
+    top: 0.5ex;
+    background-color: rgba(151, 5, 5, 0.747);
+    border-radius: 5ex;
+    border-color: transparent;
+    width: 4ex;
+    height: 4ex;
+}
+
+.buttonRemove:hover{
+    transform: scale(1.2);
+}
+
+.imgRemoveTemperament{
+    position:relative;
+    left: -0.7ex;
+    top: 0.1ex;
+    width: 3ex;
+    height: 3ex;
+}
+
+.createDogButton
+{
+    display: flex;
+    position: relative;
+    left: 0ex;
+    top: 0px;
+    padding: 15px 30px;
+    border: 2px solid rgba(0, 0, 0, 0.685);
+    margin: 40px;
+    text-transform: uppercase;
+    font-size: 1.1ex;
+    font-weight: 600;
+    letter-spacing: 0.5ex;
+    color: rgba(255, 255, 255, 0.651);
+    transition: 0.3s;
+    border-radius: 2ex;
+    cursor: pointer;
+}
+
+
+.createDogButton:disabled {
+    background-color: rgba(0, 0, 0, 0.315);
+    color: rgb(255, 255, 255);
+    cursor: not-allowed;
+}
+
+.createDogButton:hover 
+{
+    transition-delay: 0s;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgb(206, 2, 2),
+                0 0 40px rgb(0, 0, 0),
+                0 0 80px rgb(194, 0, 0),
+                0 0 160px rgba(255, 0, 0, 0.068);                 
+}
