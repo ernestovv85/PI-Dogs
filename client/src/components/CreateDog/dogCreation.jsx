@@ -287,8 +287,8 @@ export default function DogCreate() {
             <option hidden>Temperamentos del perro</option>
             {temperament.map((temperament) => (
               <option
-                key={temperament}
-                value={temperament}
+                key={temperament.id}
+                value={temperament.id}
               >{temperament}</option>
             ))}
           </select>

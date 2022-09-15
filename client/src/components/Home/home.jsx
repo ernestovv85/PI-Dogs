@@ -114,8 +114,8 @@ export default function Home() {
           <option value='All'>Temperamentos</option>
           {allTemperaments.map((temperament) => (
             <option
-              value={temperament}
-              key={temperament}
+              value={temperament.id}
+              key={temperament.id}
             >{temperament}</option>            
           ))}
           
