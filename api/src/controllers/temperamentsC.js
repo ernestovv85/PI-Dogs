@@ -7,14 +7,7 @@ const dogTemperament = async(req, res, next) => {
     const response = apiUrl.data.map(el => {
       return el.temperament
     }).join().split(',')
-    // let setTemperaments = [...new Set(response)]
-    // setTemperaments.forEach(temperament => {
-    //   if (temperament) {
-    //     Temperament.findOrCreate({
-    //       where: { name: temperament }
-    //     })
-    //   }
-    // })
+   
     let temps = [];
 
     response.map((c) => {

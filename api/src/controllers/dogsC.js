@@ -226,6 +226,7 @@ const createDog = async (req, res, next) => {
       minLifeSpan,
       maxLifeSpan,
       image,
+      createdInDb,
       temperament,
   } = req.body;
 
@@ -238,7 +239,7 @@ const createDog = async (req, res, next) => {
       weight,
       life_span,
       image: image ? image : 'https://i.pinimg.com/564x/1c/77/72/1c7772ea29c8778cbfd2af041a8fc948.jpg',
-      
+      createdInDb: true,
   });
     let temperamentDb = await Temperament.findAll({
       where: { name: temperament }
